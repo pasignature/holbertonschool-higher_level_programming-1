@@ -37,3 +37,5 @@ A python program that prints a string.
 A python program that displays a specific bytecode.
 
 ## 9. `103-fast_alphabet.py`
+
+A python program that prints the lowercase alphabet.
