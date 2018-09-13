@@ -5,6 +5,6 @@ if __name__ == "__main__":
     if count == 1:
         print("0")
     elif count == 2:
-        print("{:d}".format(int(argv[1])))
+        print("{:s}".format(argv[1]))
     else:
         print("{:d}".format(int(argv[1]) + int(argv[2])))
