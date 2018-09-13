@@ -12,4 +12,4 @@ if __name__ == "__main__":
         num = 1
         for i in range(1, count):
             print("{:d}: {:s}".format(num, argv[i]))
-            num += 1;
+            num += 1
