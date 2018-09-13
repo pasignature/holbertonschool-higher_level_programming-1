@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
-    count = len(argv)
-    if count == 1:
-        print("0")
-    elif count == 2:
-        print("{:s}".format(argv[1]))
+    sum = 0
+    if len(argv) == 1:
+        sum = 0
     else:
-        print("{:d}".format(int(argv[1]) + int(argv[2])))
+        for n in range(1, len(argv)):
+            sum += int(argv[n])
+    print("{:d}".format(sum))
