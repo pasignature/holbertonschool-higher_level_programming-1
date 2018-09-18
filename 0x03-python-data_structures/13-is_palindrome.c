@@ -10,8 +10,9 @@ int is_palindrome(listint_t **head)
 
 	if (!head)
 		return (0);
-	if (!*head)
+	if (!*head || !(*head)->next)
 		return (1);
+	bck = frnt->next;
 	while (bck->next)
 		bck = bck->next;
 	while (frnt->n == bck->n)
