@@ -18,13 +18,11 @@ int is_palindrome(listint_t **head)
 	{
 		end = bck;
 		if (frnt == bck || frnt->next == bck || frnt->next->next == bck)
-		{
 			return (1);
-		}
 		else
 		{
 			frnt = frnt->next;
-			bck = frnt;
+			bck = frnt->next;
 			while (bck->next != end)
 				bck = bck->next;
 		}
