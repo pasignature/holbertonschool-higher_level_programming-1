@@ -3,7 +3,7 @@
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
  * @head: pointer to the singly linked list
- * Return: 1 if palindrome, 0 otherwise
+ * Return: 1 if palindrome, 0 otherwise.
  */
 int is_palindrome(listint_t **head)
 {
