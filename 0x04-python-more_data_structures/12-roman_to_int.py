@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) is not str:
         return 0
     for c in roman_string:
-        if c not in ['I', 'V', 'X', 'L', 'C', 'D', 'M']:
+        if c not in r_n.keys():
             return 0
     total = 0
     prev = 0
