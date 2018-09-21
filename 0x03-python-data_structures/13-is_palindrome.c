@@ -18,7 +18,7 @@ int is_palindrome(listint_t **head)
 
 #include <stdio.h>
 /**
- * ip_helper - recursive function that does the actual checking if is palindrome
+ * ip_helper - recursive func that does the actual checking if is palindrome
  * @frnt: pointer to front of linked list
  * @bck: pointer to back of linked list
  * Return: 1 if match, 0 if not
