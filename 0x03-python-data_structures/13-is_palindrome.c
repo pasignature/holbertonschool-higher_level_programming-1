@@ -22,6 +22,7 @@ int is_palindrome(listint_t **head)
  * ip_helper - recursive func that does the actual checking if is palindrome
  * @frnt: pointer to front of linked list
  * @bck: pointer to back of linked list
+ * @mid: flag pointer if middle has been reached
  * Return: 1 if match, 0 if not
  */
 int ip_helper(listint_t **frnt, listint_t *bck, int *mid)
