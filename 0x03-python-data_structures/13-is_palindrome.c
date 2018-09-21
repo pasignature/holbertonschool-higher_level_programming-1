@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	char *n;
 
 	n = malloc(0);
-	if (!n):
+	if (!n)
 		return (NULL);
 	if (!head)
 		return (0);
