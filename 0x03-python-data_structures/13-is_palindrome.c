@@ -26,17 +26,12 @@ int is_palindrome(listint_t **head)
 int ip_helper(listint_t **frnt, listint_t *bck)
 {
 	if (bck->next)
-	{
 		if (!ip_helper(frnt, bck->next))
 			return (0);
-	}
-	else
+	if ((*frnt)->n == bck->n)
 	{
-		if ((*frnt)->n != bck->n)
-			return (0);
-		if (*frnt == bck || (*frnt)->next == bck)
-			return (1);
 		*frnt = (*frnt)->next;
+		return (1);
 	}
-	return (1);
+	return (0);
 }
