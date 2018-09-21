@@ -8,12 +8,13 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t **frnt = head;
+	int mid = 0;
 
 	if (!head)
 		return (0);
 	if (!*head || !(*head)->next)
 		return (1);
-	return (ip_helper(frnt, (*head)->next));
+	return (ip_helper(frnt, (*head)->next, &mid));
 }
 
 #include <stdio.h>
@@ -23,14 +24,21 @@ int is_palindrome(listint_t **head)
  * @bck: pointer to back of linked list
  * Return: 1 if match, 0 if not
  */
-int ip_helper(listint_t **frnt, listint_t *bck)
+int ip_helper(listint_t **frnt, listint_t *bck, int *mid)
 {
 	if (bck->next)
-		if (!ip_helper(frnt, bck->next))
+	{
+		if (!ip_helper(frnt, bck->next, mid))
 			return (0);
+		if (*mid)
+			return (1);
+	}
 	if ((*frnt)->n == bck->n)
 	{
-		*frnt = (*frnt)->next;
+		if (*frnt == bck || (*frnt)->next == bck)
+			*mid = 1;
+		else
+			*frnt = (*frnt)->next;
 		return (1);
 	}
 	return (0);

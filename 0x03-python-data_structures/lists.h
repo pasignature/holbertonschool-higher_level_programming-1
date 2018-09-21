@@ -22,6 +22,6 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
-int ip_helper(listint_t **frnt, listint_t *bck);
+int ip_helper(listint_t **frnt, listint_t *bck, int *mid);
 
 #endif /* LISTS_H */
