@@ -8,7 +8,11 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t **frnt = head;
+	char *n;
 
+	n = malloc(0);
+	if (!n):
+		return (NULL);
 	if (!head)
 		return (0);
 	if (!*head || !(*head)->next)
