@@ -9,3 +9,5 @@
 ## 0x03 Python Data Structure
 
 ## 0x04 Python More Data Structures
+
+## 0x05 Python Wxceptions
