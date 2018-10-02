@@ -11,3 +11,5 @@
 ## 0x04 Python More Data Structures
 
 ## 0x05 Python Wxceptions
+
+## 0x06 Python Classes
