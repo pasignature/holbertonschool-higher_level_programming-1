@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 class Square:
     """Basic square class #2"""
 
