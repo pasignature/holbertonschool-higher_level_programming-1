@@ -41,9 +41,7 @@ class Square:
 
     def my_print(self):
         """Prints to stdout the square using # symbol"""
-        row = ' ' * self.__position[0]
-        row += ''.join('#' for c in range(self.size))
-        print('\n'.join(row for r in range(self.size)))
+        print(self)
 
     def __str__(self):
         """Prints to stdout the square using # symbol"""
@@ -51,6 +49,26 @@ class Square:
         row += ''.join('#' for c in range(self.size))
         return '\n'.join(row for r in range(self.size))
 
-    def __repr__(self):
-        """Returns the square area"""
-        return repr(self.area)
+    def __lt__(self, other):
+        """Comparison wtih other"""
+        return self.area() < other.area()
+
+    def __eq__(self, other):
+        """Comparison wtih other"""
+        return self.area() == other.area()
+
+    def __ne__(self, other):
+        """Comparison wtih other"""
+        return self.area() != other.area()
+
+    def __gt__(self, other):
+        """Comparison wtih other"""
+        return self.area() > other.area()
+
+    def __le__(self, other):
+        """Comparison wtih other"""
+        return self.area() <= other.area()
+
+    def __ge__(self, other):
+        """Comparison wtih other"""
+        return self.area() >= other.area()
