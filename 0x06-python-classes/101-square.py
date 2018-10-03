@@ -45,6 +45,11 @@ class Square:
 
     def __str__(self):
         """Prints to stdout the square using # symbol"""
-        row = ' ' * self.__position[0]
-        row += ''.join('#' for c in range(self.size))
-        return '\n'.join(row for r in range(self.size))
+        if self.size == 0:
+            return ""
+        else:
+            row = ' ' * self.__position[0]
+            row += ''.join('#' for c in range(self.size))
+            result = ''.join('\n' for i in range(self.position[1]))
+            result += '\n'.join(row for r in range(self.size))
+            return result
