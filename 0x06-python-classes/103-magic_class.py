@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 class MagicClass:
+    import math
     """magic class
     filler text 2
     """
-    import math
 
     def __init__(self, radius=0):
         """Initialize magic class"""
