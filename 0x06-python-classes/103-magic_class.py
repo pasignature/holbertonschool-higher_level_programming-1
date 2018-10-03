@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 class MagicClass:
     """magic class
-    filler text 1
     filler text 2
     """
+    import math
 
     def __init__(self, radius):
         """Initialize magic class"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be a number')
-        self.__radius = radius
+        else:
+            self.__radius = radius
 
     def area(self):
         """Calculate area"""
