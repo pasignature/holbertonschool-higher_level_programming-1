@@ -6,7 +6,7 @@ class MagicClass:
         """Initialize magic class"""
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
-            raise TypeError('radius must bye a number')
+                raise TypeError('radius must be a number')
         else:
             self.__radius = radius
 
