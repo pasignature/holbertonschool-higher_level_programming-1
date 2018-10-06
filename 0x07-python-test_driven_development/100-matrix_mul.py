@@ -38,11 +38,13 @@ def matrix_mul(m_a, m_b):
         if len(l) == 0:
             raise ValueError("m_b" + ve1)
     for row in m_a:
-        if not any(isinstance(e, (int, float)) for e in row):
-            raise TypeError("m_a" + te3)
+        for e in row:
+            if not isinstance(e, (int, float)):
+                raise TypeError("m_a" + te3)
     for row in m_b:
-        if not any(isinstance(e, (int, float)) for e in row):
-            raise TypeError("m_b" + te3)
+        for e in row:
+            if not isinstance(e, (int, float)):
+                raise TypeError("m_b" + te3)
     if len(set(len(row) for row in m_a)) != 1:
         raise TypeError(te4a + "m_a" + te4b)
     if len(set(len(row) for row in m_b)) != 1:
