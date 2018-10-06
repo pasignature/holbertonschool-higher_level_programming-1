@@ -102,3 +102,7 @@ Test 21:
 Test 22:
     >>> add_integer(1, -1)
     0
+
+Test 23:
+    >>> add_integer(1.1, 2.2)
+    3
