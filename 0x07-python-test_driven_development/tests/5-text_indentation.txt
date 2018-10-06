@@ -44,3 +44,9 @@ Test 8:
 Test 9:
 >>> text_indentation("\n ")
 <BLANKLINE>
+
+Test 10:
+>>> text_indentation("abc\n mno   ")
+abc
+mno
+
