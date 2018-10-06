@@ -28,5 +28,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_descending_list(self):
         self.assertEqual(max_integer([5, 4, 3, 2, 1]), 5)
 
+    def test_middle(self):
+        self.assertEqual(max_integer([0, 1, 2, 1, -1]), 2)
+
 if __name__ == '__main__':
     unittest.testmaxinteger()
