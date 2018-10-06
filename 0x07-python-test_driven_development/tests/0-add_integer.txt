@@ -9,109 +9,102 @@ Test 1:
 
 Test 2:
     >>> try:
-    ...     add_integer()
-    ... except Exception as e:
-    ...     print(e)
-    add_integer() missing 1 required positional argument: 'a'
-
-Test 3:
-    >>> try:
     ...     add_integer(None)
     ... except Exception as e:
     ...     print(e)
     a must be an integer
 
-Test 4:
+Test 3:
     >>> add_integer(0)
     98
 
-Test 5:
+Test 4:
     >>> add_integer(1)
     99
 
-Test 6:
+Test 5:
     >>> try:
     ...     add_integer('a')
     ... except Exception as e:
     ...     print(e)
     a must be an integer
 
-Test 7:
+Test 6:
     >>> try:
     ...     add_integer([1])
     ... except Exception as e:
     ...     print(e)
     a must be an integer
 
-Test 8:
+Test 7:
     >>> try:
     ...     add_integer({0:0})
     ... except Exception as e:
     ...     print(e)
     a must be an integer
 
-Test 9:
+Test 8:
     >>> try:
     ...     add_integer(0, None)
     ... except Exception as e:
     ...     print(e)
     b must be an integer
 
-Test 10:
+Test 9:
     >>> add_integer(0, 0)
     0
 
-Test 11:
+Test 10:
     >>> add_integer(1, 1)
     2
 
-Test 12:
+Test 11:
     >>> try:
     ...     add_integer(0, 'a')
     ... except Exception as e:
     ...     print(e)
     b must be an integer
 
-Test 13:
+Test 12:
     >>> add_integer(.6)
     98
 
-Test 14:
+Test 13:
     >>> add_integer(.1, .1)
     0
 
-Test 15:
+Test 14:
     >>> add_integer(.1, 0)
     0
 
-Test 16:
+Test 15:
     >>> add_integer(0, .1)
     0
 
-Test 17:
+Test 16:
     >>> add_integer(.6, .6)
     0
 
-Test 18:
+Test 17:
     >>> add_integer(.6, 0)
     0
 
-Test 19:
+Test 18:
     >>> add_integer(0, .6)
     0
 
-Test 20:
+Test 19:
     >>> add_integer(-.6, -.6)
     0
 
-Test 21:
+Test 20:
     >>> add_integer(-.6, 0)
     0
 
-Test 22:
+Test 21:
     >>> add_integer(0, -.6)
     0
 
-Test 23:
+Test 22:
     >>> add_integer(1, -1)
     0
