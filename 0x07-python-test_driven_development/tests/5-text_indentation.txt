@@ -1,0 +1,46 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1:
+>>> text_indentation("")
+
+Test 2:
+>>> text_indentation("A")
+A
+
+Test 3:
+>>> text_indentation("?")
+?
+<BLANKLINE>
+
+Test 4:
+>>> text_indentation(" : ")
+:
+<BLANKLINE>
+
+Test 5:
+>>> text_indentation(" \n.\n ")
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+
+Test 6:
+>>> text_indentation(" \n.")
+<BLANKLINE>
+.
+<BLANKLINE>
+
+Test 7:
+>>> text_indentation(" A . ")
+A .
+<BLANKLINE>
+
+Test 8:
+>>> text_indentation(".\n ")
+.
+<BLANKLINE>
+<BLANKLINE>
+
+Test 9:
+>>> text_indentation("\n ")
+<BLANKLINE>

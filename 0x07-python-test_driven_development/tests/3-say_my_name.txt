@@ -1,0 +1,43 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``3-say_my_name``
+-------------------
+
+Test 1:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test 2:
+    >>> try:
+    ...     say_my_name(123)
+    ... except Exception as e:
+    ...     print(e)
+    first_name must be a string
+
+Test 3:
+    >>> try:
+    ...     say_my_name("Mon Chou", 123)
+    ... except Exception as e:
+    ...     print(e)
+    last_name must be a string
+
+Test 4:
+    >>> try:
+    ...     say_my_name("Mon", "Chou")
+    ... except Exception as e:
+    ...     print(e)
+    My name is Mon Chou
+
+Test 5:
+    >>> try:
+    ...     say_my_name(("set"),)
+    ... except Exception as e:
+    ...     print(e)
+    My name is set 
+
+Test 6:
+    >>> try:
+    ...     say_my_name("[list]","[type]")
+    ... except Exception as e:
+    ...     print(e)
+    My name is [list] [type]

@@ -1,0 +1,92 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``2-matrix_divided``
+-------------------
+
+Test 1:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test 2:
+    >>> try:
+    ...     matrix_divided([], 0)
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+Test 3:
+    >>> try:
+    ...     matrix_divided([[]], 0)
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+Test 4:
+    >>> try:
+    ...     matrix_divided([[], []], 0)
+    ... except Exception as e:
+    ...     print(e)
+    matrix must be a matrix (list of lists) of integers/floats
+
+Test 5:
+    >>> try:
+    ...     matrix_divided([[1], [1]], 1)
+    ... except Exception as e:
+    ...     print(e)
+    [[1.0], [1.0]]
+
+Test 6:
+    >>> try:
+    ...     matrix_divided([[0], [1]], 1)
+    ... except Exception as e:
+    ...     print(e)
+    [[0.0], [1.0]]
+
+Test 7:
+    >>> try:
+    ...     matrix_divided([[-1], [0]], 1)
+    ... except Exception as e:
+    ...     print(e)
+    [[-1.0], [0.0]]
+
+Test 8:
+    >>> try:
+    ...     matrix_divided([[0], [0]], 0)
+    ... except Exception as e:
+    ...     print(e)
+    division by zero
+
+Test 9:
+    >>> try:
+    ...     matrix_divided([[0], [0, 1]], 1)
+    ... except Exception as e:
+    ...     print(e)
+    Each row of the matrix must have the same size
+
+Test 10:
+    >>> try:
+    ...     matrix_divided([[1, 2], [3, 4]], 3)
+    ... except Exception as e:
+    ...     print(e)
+    [[0.33, 0.67], [1.0, 1.33]]
+
+Test 11:
+    >>> try:
+    ...     matrix_divided([[1, 1], [1, 2]], 300)
+    ... except Exception as e:
+    ...     print(e)
+    [[0.0, 0.0], [0.0, 0.01]]
+
+Test 12:
+    >>> try:
+    ...     matrix_divided([[100, 100], [100, 200]], 2)
+    ... except Exception as e:
+    ...     print(e)
+    [[50.0, 50.0], [50.0, 100.0]]
+
+Test 13:
+    >>> try:
+    ...     matrix_divided([[100, 100], [100, 200]], 'A')
+    ... except Exception as e:
+    ...     print(e)
+    div must be a number

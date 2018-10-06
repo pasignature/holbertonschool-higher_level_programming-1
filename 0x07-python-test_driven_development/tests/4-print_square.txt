@@ -1,0 +1,58 @@
+#doctest: +REPORT_ONLY_FIRST_FAILURE
+The ``4-print_square`` module
+======================
+
+Using ``4-print_square``
+-------------------
+
+Test 1:
+    >>> print_square = __import__('4-print_square').print_square #doctest: +REPORT_ONLY_FIRST_FAILURE
+
+Test 2:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(0)
+    ... except Exception as e:
+    ...     print(e) #doctest: +REPORT_ONLY_FIRST_FAILURE
+
+Test 3:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(1)
+    ... except Exception as e:
+    ...     print(e)
+    #
+
+Test 4:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(3)
+    ... except Exception as e:
+    ...     print(e)
+    ###
+    ###
+    ###
+
+Test 5:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square('A')
+    ... except Exception as e:
+    ...     print(e)
+    size must be an integer
+
+Test 6:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(-0)
+    ... except Exception as e:
+    ...     print(e)
+
+Test 7:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(-1)
+    ... except Exception as e:
+    ...     print(e)
+    size must be >= 0
+
+Test 8:
+    >>> try: #doctest: +REPORT_ONLY_FIRST_FAILURE
+    ...     print_square(4.0)
+    ... except Exception as e:
+    ...     print(e)
+    size must be an integer
