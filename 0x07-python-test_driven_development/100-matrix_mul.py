@@ -53,6 +53,6 @@ def matrix_mul(m_a, m_b):
     for ar in m_a:
         nr = []
         for c in range(len(m_b[0])):
-             nr.append(sum(a * b for a, b in zip(ar, list(r[c] for r in m_b))))
+            nr.append(sum(a * b for a, b in zip(ar, list(r[c] for r in m_b))))
         new.append(nr)
     return new
