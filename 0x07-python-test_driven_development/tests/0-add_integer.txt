@@ -106,3 +106,9 @@ Test 22:
 Test 23:
     >>> add_integer(1.1, 2.2)
     3
+
+Test 24:
+   >>> add_integer("WUT", "WAT")
+   Traceback (most recent call last):
+   ...
+   TypeError: a must be an integer
