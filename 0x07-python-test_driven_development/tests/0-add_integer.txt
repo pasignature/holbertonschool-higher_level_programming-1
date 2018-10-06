@@ -42,3 +42,15 @@ Test 8:
    Traceback (most recent call last):
    ...
    TypeError: a must be an integer
+
+Test 9:
+   >>> add_integer('nan', 'nan')
+   Traceback (most recent call last):
+   ...
+   TypeError: a must be an integer
+
+Test 10:
+   >>> add_integer(float(2**1023), float(2**1023))
+   Traceback (most recent call last):
+   ...
+   OverflowError: overflow error
