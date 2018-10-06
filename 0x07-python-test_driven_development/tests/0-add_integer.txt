@@ -8,113 +8,37 @@ Test 1:
     >>> add_integer = __import__('0-add_integer').add_integer
 
 Test 2:
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
+   >>> add_integer(1, 2)
+   3
 
 Test 3:
-    >>> add_integer(0)
-    98
+   >>> add_integer(1, -2)
+   -1
 
 Test 4:
-    >>> add_integer(1)
-    99
+   >>> add_integer(1.4, 2)
+   3
 
 Test 5:
-    >>> add_integer('a')
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
+   >>> add_integer(1, "2")
+   Traceback (most recent call last):
+   ...
+   TypeError: b must be an integer
 
 Test 6:
-    >>> add_integer([1])
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-Test 7:
-    >>> add_integer({0:0})
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-Test 8:
-    >>> add_integer(0, None)
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
-
-Test 9:
-    >>> add_integer(0, 0)
-    0
-
-Test 10:
-    >>> add_integer(1, 1)
-    2
-
-Test 11:
-    >>> add_integer(0, 'a')
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
-
-Test 12:
-    >>> add_integer(.6)
-    98
-
-Test 13:
-    >>> add_integer(.1, .1)
-    0
-
-Test 14:
-    >>> add_integer(.1, 0)
-    0
-
-Test 15:
-    >>> add_integer(0, .1)
-    0
-
-Test 16:
-    >>> add_integer(.6, .6)
-    0
-
-Test 17:
-    >>> add_integer(.6, 0)
-    0
-
-Test 18:
-    >>> add_integer(0, .6)
-    0
-
-Test 19:
-    >>> add_integer(-.6, -.6)
-    0
-
-Test 20:
-    >>> add_integer(-.6, 0)
-    0
-
-Test 21:
-    >>> add_integer(0, -.6)
-    0
-
-Test 22:
-    >>> add_integer(1, -1)
-    0
-
-Test 23:
-    >>> add_integer(1.1, 2.2)
-    3
-
-Test 24:
-   >>> add_integer("WUT", "WAT")
+   >>> add_integer("A")
    Traceback (most recent call last):
    ...
    TypeError: a must be an integer
 
-Test 25:
+Test 7:
    >>> add_integer()
    Traceback (most recent call last):
    ...
    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 8:
+   >>> add_integer(None)
+   Traceback (most recent call last):
+   ...
+   TypeError: a must be an integer
