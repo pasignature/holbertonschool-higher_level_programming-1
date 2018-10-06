@@ -17,8 +17,11 @@ def add_integer(a, b=98):
         TypeError: if either a or b is neither an integer nor a float
 
     """
-    if a is None or not isinstance(a, (int, float)):
+    if a != a or not isinstance(a, (int, float)):
         raise TypeError('a must be an integer')
-    if not isinstance(b, (int, float)):
+    if b != b or not isinstance(b, (int, float)):
         raise TypeError('b must be an integer')
+    res = a + b
+    if abs(res) == float('inf'):
+        raise OverflowError('overflow error')
     return int(a) + int(b)
