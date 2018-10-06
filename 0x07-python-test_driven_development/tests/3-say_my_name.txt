@@ -41,3 +41,10 @@ Test 6:
     ... except Exception as e:
     ...     print(e)
     My name is [list] [type]
+
+Test 7:
+    >>> try:
+    ...	    say_my_name()
+    ... except Exception as e:
+    ...     print(e)
+    say_my_name() missing 1 required positional argument: 'first_name'
