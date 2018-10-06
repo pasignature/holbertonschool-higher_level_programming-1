@@ -30,12 +30,12 @@ Traceback (most recent call last):
 ...
 ValueError: m_b can't be empty
 
->>> matrix_mul([['A']], [['A']])
+>>> matrix_mul([['A', 0], [0, 0]], [[0, 0], ['A', 0]])
 Traceback (most recent call last):
 ...
 TypeError: m_a should contain only integers or floats
 
->>> matrix_mul([[0]], [['A']])
+>>> matrix_mul([[0, 0], [0, 0]], [[0, 0], ['A', 0]])
 Traceback (most recent call last):
 ...
 TypeError: m_b should contain only integers or floats
