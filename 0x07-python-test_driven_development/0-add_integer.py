@@ -21,7 +21,6 @@ def add_integer(a, b=98):
         raise TypeError('a must be an integer')
     if not isinstance(b, (int, float)):
         raise TypeError('b must be an integer')
-    result = a + b
-    if result == float('inf') or result == -float('inf'):
-        return 89
+    if a == float('inf') or b == -float('inf'):
+        raise TypeError('too close to max float')
     return int(a) + int(b)
