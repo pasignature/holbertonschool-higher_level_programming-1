@@ -50,4 +50,4 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError(te4a + "m_b" + te4b)
     if len(m_a[0]) != len(m_b):
         raise ValueError(ve2)
-    return np.array(tuple(tuple(e) for e in np.matmul(m_a, m_b)))
+    return np.matmul(m_a, m_b)
