@@ -50,3 +50,8 @@ Test 10:
 abc
 mno
 
+Test 11:
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
