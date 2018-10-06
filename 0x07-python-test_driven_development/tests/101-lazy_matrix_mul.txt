@@ -3,57 +3,51 @@
 >>> lazy_matrix_mul(0, 0)
 Traceback (most recent call last):
 ...
-TypeError: m_a must be a list
+ValueError: Scalar operands are not allowed, use '*' instead
 
 >>> lazy_matrix_mul([], 0)
 Traceback (most recent call last):
 ...
-TypeError: m_b must be a list
+ValueError: Scalar operands are not allowed, use '*' instead
 
 >>> lazy_matrix_mul([], [])
-Traceback (most recent call last):
-...
-TypeError: m_a must be a list of lists
+0.0
 
 >>> lazy_matrix_mul([[]], [])
-Traceback (most recent call last):
-...
-TypeError: m_b must be a list of lists
+array([0.])
 
 >>> lazy_matrix_mul([[]], [[]])
 Traceback (most recent call last):
 ...
-ValueError: m_a can't be empty
+ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
 
 >>> lazy_matrix_mul([[0]], [[]])
-Traceback (most recent call last):
-...
-ValueError: m_b can't be empty
+array([], shape=(1, 0), dtype=int64)
 
 >>> lazy_matrix_mul([['A']], [['A']])
 Traceback (most recent call last):
 ...
-TypeError: m_a should contain only integers or floats
+TypeError: Cannot cast scalar from dtype('bool') to dtype('<U1') according to the rule 'safe'
 
 >>> lazy_matrix_mul([[0]], [['A']])
 Traceback (most recent call last):
 ...
-TypeError: m_b should contain only integers or floats
+TypeError: invalid data type for einsum
 
 >>> lazy_matrix_mul([[0], [0, 0]], [[0, 0], [0]])
 Traceback (most recent call last):
 ...
-TypeError: each row of m_a must should be of the same size
+ValueError: setting an array element with a sequence.
 
 >>> lazy_matrix_mul([[0], [0]], [[0, 0], [0]])
 Traceback (most recent call last):
 ...
-TypeError: each row of m_b must should be of the same size
+ValueError: setting an array element with a sequence.
 
 >>> lazy_matrix_mul([[0], [0]], [[0], [0]])
 Traceback (most recent call last):
 ...
-ValueError: m_a and m_b can't be multiplied
+ValueError: shapes (2,1) and (2,1) not aligned: 1 (dim 1) != 2 (dim 0)
 
 >>> lazy_matrix_mul([[1], [2]], [[3]])
 array([[3],
