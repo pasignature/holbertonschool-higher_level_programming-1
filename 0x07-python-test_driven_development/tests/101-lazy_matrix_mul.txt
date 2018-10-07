@@ -65,3 +65,13 @@ ValueError: setting an array element with a sequence.
 Traceback (most recent call last):
 ...
 ValueError: shapes (2,1) and (2,1) not aligned: 1 (dim 1) != 2 (dim 0)
+
+>>> lazy_matrix_mul([[0]],)
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
