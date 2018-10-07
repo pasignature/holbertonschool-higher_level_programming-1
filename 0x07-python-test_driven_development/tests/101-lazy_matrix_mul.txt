@@ -44,7 +44,7 @@ array([], shape=(1, 0), dtype=int64)
 >>> lazy_matrix_mul([['A']], [['A']])
 Traceback (most recent call last):
 ...
-TypeError: Cannot cast scalar from dtype('bool') to dtype('<U1') according to the rule 'safe'
+TypeError: invalid data type for einsum
 
 >>> lazy_matrix_mul([[0]], [['A']])
 Traceback (most recent call last):
