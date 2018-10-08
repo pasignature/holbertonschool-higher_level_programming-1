@@ -15,3 +15,5 @@
 ## 0x06 Python Classes
 
 ## 0x07 Python Test-driven development
+
+## 0x08 Python More Classes
