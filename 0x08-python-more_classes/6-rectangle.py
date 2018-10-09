@@ -46,7 +46,7 @@ class Rectangle:
 
     def __str__(self):
         if self.area() == 0:
-            return 0
+            return ''
         return '\n'.join([str(self.print_symbol) * self.width] * self.height)
 
     def __repr__(self):
