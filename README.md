@@ -17,3 +17,5 @@
 ## 0x07 Python Test-driven development
 
 ## 0x08 Python More Classes
+
+## 0x09 Python Everything is Object
