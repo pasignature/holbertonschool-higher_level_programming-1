@@ -39,7 +39,9 @@ def findsoln(board, row):
         if checkspot(board, row, col):
             board[row][col] = 1
             if row == len(board) - 1:
-                return board
+                print(convtosoln(board))
+                board[row][col] = 0
+                continue
             if findsoln(board, row + 1):
                 return board
             else:
@@ -61,9 +63,7 @@ def nqueens(n=4):
     for col in range(n):
         board = initboard(n)
         board[0][col] = 1
-        board = findsoln(board, 1)
-        if board:
-            print(convtosoln(board))
+        findsoln(board, 1)
 
 
 if __name__ == "__main__":
