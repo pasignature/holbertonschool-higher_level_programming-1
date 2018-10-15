@@ -21,4 +21,5 @@ class Rectangle(__import__('7-base_geometry').BaseGeometry):
     def __str__(self):
         """Return a formatted string to be printed"""
 
-        return '[Rectangle] {}/{}'.format(self.__width, self.__height)
+        return '[{}] {}/{}'.format(self.__class__.__name__,
+                                   self.__width, self.__height)
