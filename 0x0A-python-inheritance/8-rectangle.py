@@ -2,7 +2,7 @@
 """Rectangle Module"""
 
 
-class Rectangle(__import__('7-base_geometry').Rectangle):
+class Rectangle(__import__('7-base_geometry').BaseGeometry):
     """Rectangle Class"""
 
     def __init__(self, width, height):
