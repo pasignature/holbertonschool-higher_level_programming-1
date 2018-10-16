@@ -9,7 +9,7 @@ class Student:
         """Initialize"""
 
         self.first_name = first_name
-        self.last_Name = last_name
+        self.last_name = last_name
         self.age = age
 
     def to_json(self):
