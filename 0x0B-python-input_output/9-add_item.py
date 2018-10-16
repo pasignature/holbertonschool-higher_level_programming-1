@@ -7,9 +7,6 @@ import sys
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Incorrect number of args")
-        exit()
     try:
         lst = loadfile("add_item.json")
     except:
