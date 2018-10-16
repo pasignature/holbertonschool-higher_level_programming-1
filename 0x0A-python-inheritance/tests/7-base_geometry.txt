@@ -28,3 +28,13 @@ TypeError: Leo must be an integer
 Traceback (most recent call last):
 ...
 TypeError: Leo must be an integer
+
+>>> a.integer_validator("Leo", 1.1)
+Traceback (most recent call last):
+...
+TypeError: Leo must be an integer
+
+>>> a.integer_validator("leo", -10)
+Traceback (most recent call last):
+...
+ValueError: leo must be greater than 0
