@@ -15,13 +15,15 @@ class Student:
     def to_json(self, attrs=None):
         """Retrieves the dict repr of Student"""
 
-        if attrs and type(attrs) is list:
-            d = {}
-            for k in attrs:
-                if k in self.__dict__.keys():
-                    d[k] = self.__dict__[k]
-            return d
-        return self.__dict__
+        if attrs is None or not isinstance(attrs, list):
+            return self.__dict__
+        d = {}
+        for k in attrs:
+            if not isinstance(k, str):
+                return self.__dict__
+            if k in self.__dict__.keys():
+                d[k] = self.__dict__[k]
+        return d
 
     def reload_from_json(self, json):
         """Replaces all attributes of the instances"""
