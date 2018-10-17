@@ -5,10 +5,9 @@
 def pascal_triangle(n):
     """Returns a list of list of integers repr Pascal's Triangle of n"""
 
-    ans = []
     if n <= 0:
         return ans
-    ans.append([1])
+    ans = [[1]]
     if n == 1:
         return ans
     for i in range(1, n):
