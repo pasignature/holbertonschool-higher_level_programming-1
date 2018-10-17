@@ -7,4 +7,4 @@ def append_write(filename="", text=""):
     number of char appended"""
 
     with open(filename, "a", encoding="UTF-8") as f:
-        return f.write(str(text))
+        return f.write(text)
