@@ -15,7 +15,7 @@ class Student:
     def to_json(self, attrs=None):
         """Retrieves the dict repr of Student"""
 
-        if attrs:
+        if attrs and type(attrs) is list:
             d = {}
             for k in attrs:
                 if k in self.__dict__.keys():
