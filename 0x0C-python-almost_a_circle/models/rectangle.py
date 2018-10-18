@@ -88,8 +88,10 @@ class Rectangle(Base):
     def display(self):
         """Display Shape"""
 
+        for row in range(self.y):
+            print()
         for row in range(self.height):
-            print('{}'.format('#') * self.width)
+            print('{}{}'.format(' ' * self.x, '#' * self.width))
 
     def __str__(self):
         """STR Output"""
