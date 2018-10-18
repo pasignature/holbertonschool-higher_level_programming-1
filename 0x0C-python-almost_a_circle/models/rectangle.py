@@ -98,3 +98,10 @@ class Rectangle(Base):
 
         return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """Updates Attributes"""
+
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i, arg in enumerate(args):
+            self.__setattr__(attrs[i], arg)
