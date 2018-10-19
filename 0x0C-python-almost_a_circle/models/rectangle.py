@@ -102,13 +102,14 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updates Attributes"""
 
-        if args and len(args) != 0:
-            attrs = ['id', 'width', 'height', 'x', 'y']
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        if args and 0 < len(args) <= 5:
             for i, arg in enumerate(args):
                 self.__setattr__(attrs[i], arg)
-        else:
+        elif kwargs and 0 < len(args) <= 5:
             for k, v in kwargs.items():
-                self.__setattr__(k, v)
+                if k in attrs:
+                    self.__setattr__(k, v)
 
     def to_dictionary(self):
         """Returns the dictionary repr"""

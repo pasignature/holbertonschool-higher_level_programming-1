@@ -34,13 +34,14 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Update Attributes"""
 
-        if args and len(args) != 0:
-            attrs = ['id', 'size', 'x', 'y']
+        attrs = ['id', 'size', 'x', 'y']
+        if args and 0 < len(args) <= 4:
             for i, arg in enumerate(args):
                 self.__setattr__(attrs[i], arg)
-        else:
+        elif kwargs and 0 < len(kwargs) <= 4:
             for k, v in kwargs.items():
-                self.__setattr__(k, v)
+                if k in attrs:
+                    self.__setattr__(k, v)
 
     def to_dictionary(self):
         """Return dictionary repr"""
