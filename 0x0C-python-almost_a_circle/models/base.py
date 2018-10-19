@@ -50,6 +50,17 @@ class Base:
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
 
-        dummy = cls(1, 1, 1, 1)
+        dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances read from a file"""
+
+        with open(cls.__name__ + ".json", "r", encoding='utf-8') as f:
+            text = f.read()
+        obj_list = []
+        for d in cls.from_json_string(text):
+            obj_list.append(cls.create(**d))
+        return obj_list
