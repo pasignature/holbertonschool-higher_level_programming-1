@@ -37,10 +37,15 @@ class Square(Rectangle):
         attrs = ['id', 'size', 'x', 'y']
         if args and 0 < len(args) <= 4:
             for i, arg in enumerate(args):
-                self.__setattr__(attrs[i], arg)
+                if i == 0:
+                    super().update([arg])
+                else:
+                    self.__setattr__(attrs[i], arg)
         elif kwargs and 0 < len(kwargs) <= 4:
             for k, v in kwargs.items():
-                if k in attrs:
+                if k == 'id':
+                    super().update({k, v})
+                elif k in attrs:
                     self.__setattr__(k, v)
 
     def to_dictionary(self):
