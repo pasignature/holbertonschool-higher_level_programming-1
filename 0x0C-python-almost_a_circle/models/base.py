@@ -16,7 +16,7 @@ class Base:
             id - int value greater than 0
         """
 
-        if id is not None and type(id) is int:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
