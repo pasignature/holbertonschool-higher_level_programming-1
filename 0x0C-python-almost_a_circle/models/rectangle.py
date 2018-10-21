@@ -105,10 +105,15 @@ class Rectangle(Base):
         attrs = ['id', 'width', 'height', 'x', 'y']
         if args and 0 < len(args) <= 5:
             for i, arg in enumerate(args):
-                self.__setattr__(attrs[i], arg)
+                if i == 0 and arg == None:
+                    super().__init__(arg)
+                else:
+                    self.__setattr__(attrs[i], arg)
         elif kwargs and 0 < len(args) <= 5:
             for k, v in kwargs.items():
-                if k in attrs:
+                if k == 'id':
+                    super().__init__(v)
+                elif k in attrs:
                     self.__setattr__(k, v)
 
     def to_dictionary(self):
