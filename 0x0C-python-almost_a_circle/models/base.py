@@ -26,11 +26,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """Returns the JSON string repr"""
 
-        if not isinstance(list_dictionaries, list):
-            return "[]"
-        if not len(list_dictionaries):
-            return "[]"
-        if not all([isinstance(e, dict) for e in list_dictionaries]):
+        if list_dictionaries is None or not len(list_dictionaries):
             return "[]"
         return json.dumps(list_dictionaries)
 
