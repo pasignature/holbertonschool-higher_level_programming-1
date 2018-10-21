@@ -105,7 +105,7 @@ class Rectangle(Base):
         attrs = ['id', 'width', 'height', 'x', 'y']
         if args and 0 < len(args) <= 5:
             for i, arg in enumerate(args):
-                if i == 0 and arg == None:
+                if i == 0:
                     super().__init__(arg)
                 else:
                     self.__setattr__(attrs[i], arg)
