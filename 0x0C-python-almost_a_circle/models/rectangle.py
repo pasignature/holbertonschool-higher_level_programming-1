@@ -109,7 +109,7 @@ class Rectangle(Base):
                     super().__init__(arg)
                 else:
                     self.__setattr__(attrs[i], arg)
-        elif kwargs and 0 < len(args) <= 5:
+        elif kwargs and 0 < len(kwargs) <= 5:
             for k, v in kwargs.items():
                 if k == 'id':
                     super().__init__(v)
