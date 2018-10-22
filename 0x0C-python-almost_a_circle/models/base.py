@@ -2,6 +2,7 @@
 """Base Model Module"""
 
 import json
+import csv
 
 
 class Base:
@@ -63,4 +64,28 @@ class Base:
         obj_list = []
         for d in cls.from_json_string(text):
             obj_list.append(cls.create(**d))
+        return obj_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Saves objects to CSV file"""
+
+        res = [o.to_dictionary() for o in list_objs]
+        with open(cls.__name__ + '.csv', "w", encoding='utf-8') as f:
+            dwriter = csv.DictWriter(f, res[0].keys())
+            dwriter.writeheader()
+            dwriter.writerows(res)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Reads from csv file to object list"""
+
+        obj_list = []
+        with open(cls.__name__ + ".csv", "r", encoding='utf-8') as f:
+            dreader = csv.DictReader(f)
+            for row in dreader:
+                tmp = {}
+                for k,v in dict(row).items():
+                    tmp[k] = int(v)
+                obj_list.append(cls.create(**tmp))
         return obj_list
