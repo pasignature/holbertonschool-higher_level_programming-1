@@ -5,8 +5,6 @@ import unittest
 import pep8
 from models import base
 from models.base import Base as b
-from models.rectangle import Rectangle as r
-from models.square import Square as s
 
 
 class TestBase(unittest.TestCase):
