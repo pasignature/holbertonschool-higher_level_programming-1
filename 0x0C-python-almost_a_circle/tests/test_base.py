@@ -3,6 +3,7 @@
 
 import unittest
 import pep8
+from  os import path, remove
 from models import base
 from models.base import Base as b
 from models.rectangle import Rectangle as r
@@ -148,17 +149,73 @@ class TestBase(unittest.TestCase):
 
         r1d = {'id': 1, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
         r2 = r.create(**r1d)
-        self.assertEqual(r1d, r2.to_dictionary())
+        self.assertDictEqual(r1d, r2.to_dictionary())
+
+        s1d = {'id': 1, 'size': 1, 'x': 2, 'y': 3}
+        s2 = s.create(**s1d)
+        self.assertDictEqual(s1d, s2.to_dictionary())
+
+        r1 = r(1, 2)
+        r1d = r1.to_dictionary()
+        r2 = r.create(**r1d)
+        self.assertDictEqual(r1d, r2.to_dictionary())
+
+        r1 = r(1, 2, 3, 4)
+        r1d = r1.to_dictionary()
+        r2 = r.create(**r1d)
+        self.assertDictEqual(r1d, r2.to_dictionary())
+
+        s1 = s(1)
+        s1d = s1.to_dictionary()
+        s2 = s.create(**s1d)
+        self.assertDictEqual(s1d, s2.to_dictionary())
+
+        s1 = s(1, 2, 3)
+        s1d = s1.to_dictionary()
+        s2 = s.create(**s1d)
+        self.assertDictEqual(s1d, s2.to_dictionary())
 
     def test_save_to_file(self):
         """Test Save To File"""
 
-        pass
+        r1 = r(10, 7, 2, 8)
+        r2 = r(2, 4)
+        r.save_to_file([r1, r2])
+
+        s1 = s(6, 5, 3)
+        s2 = s(9)
+        s.save_to_file([s1, s2])
+
+        self.assertTrue(path.isfile('Rectangle.json'))
+        self.assertTrue(path.isfile('Square.json'))
 
     def test_load_from_file(self):
         """Test Load From File"""
 
-        pass
+        r1 = r(10, 7, 2, 8)
+        r2 = r(2, 4)
+        s1 = s(6, 5, 3)
+        s2 = s(9)
+
+        rlist = r.load_from_file()
+        slist = s.load_from_file()
+
+        self.assertIsInstance(rlist[0], r)
+        self.assertIsInstance(rlist[1], r)
+        self.assertDictEqual(rlist[0].to_dictionary(),
+                             r1.to_dictionary())
+        self.assertDictEqual(rlist[1].to_dictionary(),
+                             r2.to_dictionary())
+
+        self.assertIsInstance(slist[0], s)
+        self.assertIsInstance(slist[1], s)
+        self.assertDictEqual(slist[0].to_dictionary(),
+                             s1.to_dictionary())
+        self.assertDictEqual(slist[1].to_dictionary(),
+                             s2.to_dictionary())
+
+        remove("Rectangle.json")
+        remove("Square.json")
 
 if __name__ == '__main__':
     unittest.main()
