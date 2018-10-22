@@ -85,7 +85,7 @@ class Base:
             dreader = csv.DictReader(f)
             for row in dreader:
                 tmp = {}
-                for k,v in dict(row).items():
+                for k, v in dict(row).items():
                     tmp[k] = int(v)
                 obj_list.append(cls.create(**tmp))
         return obj_list
