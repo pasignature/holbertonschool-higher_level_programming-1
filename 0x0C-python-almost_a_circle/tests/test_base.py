@@ -5,17 +5,27 @@ import unittest
 import pep8
 from models import base
 from models.base import Base as b
-
+from models.rectangle import Rectangle as r
+from models.square import Square as s
 
 class TestBase(unittest.TestCase):
     """Class Test Base"""
 
-    def test_base_class(self):
-        """Test Base Class"""
+    def tearDown(self):
+        """Tear Down"""
+
+        b._Base__nb_objects = 0
+        self.assertEqual(b._Base__nb_objects, 0)
+
+    def test_pep8(self):
+        """Test Pep8"""
 
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])
         self.assertEqual(result.total_errors, 0)
+
+    def test_attr_method_presence(self):
+        """Test Attribute Method Presence"""
 
         b_list = dir(b)
         self.assertIn("_Base__nb_objects", b_list)
@@ -25,6 +35,9 @@ class TestBase(unittest.TestCase):
         self.assertIn("from_json_string", b_list)
         self.assertIn("create", b_list)
         self.assertIn("load_from_file", b_list)
+
+    def test_docstring(self):
+        """Test Docstring"""
 
         b1_list = dir(b())
         self.assertIn("id", b1_list)
@@ -38,45 +51,52 @@ class TestBase(unittest.TestCase):
         self.assertIsNot(b.create.__doc__, None)
         self.assertIsNot(b.load_from_file.__doc__, None)
 
+    def test_instance(self):
+        """Test Instantiation"""
+
         b1 = b()
-        self.assertIsInstance(b1, b)
-        self.assertEqual(b1.id, 2)
-        self.assertEqual(b._Base__nb_objects, 2)
-
         b2 = b(3)
-        self.assertIsInstance(b2, b)
-        self.assertEqual(b2.id, 3)
-        self.assertEqual(b._Base__nb_objects, 2)
-
         b3 = b(None)
-        self.assertIsInstance(b3, b)
-        self.assertEqual(b3.id, 3)
+        b4 = b(2.5)
+        b5 = b("Hi")
+        b6 = b(float('nan'))
+        b7 = b(['a', 1, [4, 'y']])
+        b8 = b(None)
+
+        self.assertIsInstance(b1, b)
+        self.assertEqual(b1.id, 1)
         self.assertEqual(b._Base__nb_objects, 3)
 
-        b4 = b(2.5)
+        self.assertIsInstance(b2, b)
+        self.assertEqual(b2.id, 3)
+        self.assertEqual(b._Base__nb_objects, 3)
+
+        self.assertIsInstance(b3, b)
+        self.assertEqual(b3.id, 2)
+        self.assertEqual(b._Base__nb_objects, 3)
+
         self.assertIsInstance(b4, b)
         self.assertEqual(b4.id, 2.5)
         self.assertEqual(b._Base__nb_objects, 3)
 
-        b5 = b("hi")
         self.assertIsInstance(b5, b)
-        self.assertEqual(b5.id, "hi")
+        self.assertEqual(b5.id, "Hi")
         self.assertEqual(b._Base__nb_objects, 3)
 
-        b6 = b(float('nan'))
         self.assertIsInstance(b6, b)
         self.assertNotEqual(b6.id, float('nan'))
         self.assertEqual(b._Base__nb_objects, 3)
 
-        b7 = b(['a', 1, [4, 'y']])
         self.assertIsInstance(b7, b)
         self.assertEqual(b7.id, ['a', 1, [4, 'y']])
         self.assertEqual(b._Base__nb_objects, 3)
 
-        b8 = b(None)
         self.assertIsInstance(b8, b)
-        self.assertEqual(b8.id, 4)
-        self.assertEqual(b._Base__nb_objects, 4)
+        self.assertEqual(b8.id, 3)
+        self.assertEqual(b._Base__nb_objects, 3)
+
+    def test_to_json_string(self):
+        """Test To Json String"""
 
         d1 = []
         d2 = [{'a': 'a'}]
@@ -97,8 +117,8 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             b.to_json_string(d4)
 
-        b9 = b()
-        self.assertEqual(b._Base__nb_objects, 5)
+    def test_from_json_string(self):
+        """Test From Json String"""
 
         d1 = []
         d2 = [{'a': 'a'}]
@@ -123,8 +143,22 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b.from_json_string(s2), d2)
         self.assertEqual(b.from_json_string(s3), d3)
 
-        b10 = b()
-        self.assertEqual(b._Base__nb_objects, 6)
+    def test_create(self):
+        """Test Create"""
+
+        r1d = {'id': 1, 'width': 1, 'height': 2, 'x': 3, 'y': 4}
+        r2 = r.create(**r1d)
+        self.assertEqual(r1d, r2.to_dictionary())
+
+    def test_save_to_file(self):
+        """Test Save To File"""
+
+        pass
+
+    def test_load_from_file(self):
+        """Test Load From File"""
+
+        pass
 
 if __name__ == '__main__':
     unittest.main()
