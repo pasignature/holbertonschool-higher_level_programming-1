@@ -38,13 +38,13 @@ class Square(Rectangle):
         if args and 0 < len(args) <= 4:
             for i, arg in enumerate(args):
                 if i == 0:
-                    super().update([arg])
+                    super().update(arg)
                 else:
                     self.__setattr__(attrs[i], arg)
         elif kwargs and 0 < len(kwargs) <= 4:
             for k, v in kwargs.items():
                 if k == 'id':
-                    super().update({k, v})
+                    super().update(id=v)
                 elif k in attrs:
                     self.__setattr__(k, v)
 
