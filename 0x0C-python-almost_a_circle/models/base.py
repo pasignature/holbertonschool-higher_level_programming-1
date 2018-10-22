@@ -65,11 +65,14 @@ class Base:
     def load_from_file(cls):
         """Returns a list of instances read from a file"""
 
-        with open(cls.__name__ + ".json", "r", encoding='utf-8') as f:
-            text = f.read()
         obj_list = []
-        for d in cls.from_json_string(text):
-            obj_list.append(cls.create(**d))
+        try:
+            with open(cls.__name__ + ".json", "r", encoding='utf-8') as f:
+                text = f.read()
+            for d in cls.from_json_string(text):
+                obj_list.append(cls.create(**d))
+        except:
+            pass
         return obj_list
 
     @classmethod
