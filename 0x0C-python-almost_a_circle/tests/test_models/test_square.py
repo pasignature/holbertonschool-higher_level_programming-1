@@ -2,7 +2,6 @@
 """UnitTest Module Sqaure"""
 
 import unittest
-import pep8
 import sys
 import io
 from models import square
@@ -19,15 +18,6 @@ class TestBase(unittest.TestCase):
 
         b._Base__nb_objects = 0
         self.assertEqual(b._Base__nb_objects, 0)
-
-    def test_pep8(self):
-        """Test Pep8"""
-
-        pep8style = pep8.StyleGuide(quiet=True)
-        result1 = pep8style.check_files(['models/square.py'])
-        result2 = pep8style.check_files(['tests/test_models/test_square.py'])
-        self.assertEqual(result1.total_errors, 0)
-        self.assertEqual(result2.total_errors, 0)
 
     def test_presence(self):
         """Test Presence"""

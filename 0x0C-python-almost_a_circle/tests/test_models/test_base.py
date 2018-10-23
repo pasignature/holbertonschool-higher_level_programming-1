@@ -2,7 +2,6 @@
 """UnitTest Module Base"""
 
 import unittest
-import pep8
 from  os import path, remove
 from models import base
 from models.base import Base as b
@@ -17,13 +16,6 @@ class TestBase(unittest.TestCase):
 
         b._Base__nb_objects = 0
         self.assertEqual(b._Base__nb_objects, 0)
-
-    def test_pep8(self):
-        """Test Pep8"""
-
-        pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/base.py'])
-        self.assertEqual(result.total_errors, 0)
 
     def test_attr_method_presence(self):
         """Test Attribute Method Presence"""
