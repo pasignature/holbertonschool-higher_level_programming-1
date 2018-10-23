@@ -2,12 +2,12 @@
 """UnitTest Module Base"""
 
 import unittest
-from os import path, remove
+import pep8
+from  os import path, remove
 from models import base
 from models.base import Base as b
 from models.rectangle import Rectangle as r
 from models.square import Square as s
-
 
 class TestBase(unittest.TestCase):
     """Class Test Base"""
@@ -18,8 +18,15 @@ class TestBase(unittest.TestCase):
         b._Base__nb_objects = 0
         self.assertEqual(b._Base__nb_objects, 0)
 
-    """
+    def test_pep8(self):
+        """Test Pep8"""
+
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base.py'])
+        self.assertEqual(result.total_errors, 0)
+
     def test_attr_method_presence(self):
+        """Test Attribute Method Presence"""
 
         b_list = dir(b)
         self.assertIn("_Base__nb_objects", b_list)
@@ -31,6 +38,7 @@ class TestBase(unittest.TestCase):
         self.assertIn("load_from_file", b_list)
 
     def test_docstring(self):
+        """Test Docstring"""
 
         b1_list = dir(b())
         self.assertIn("id", b1_list)
@@ -43,7 +51,6 @@ class TestBase(unittest.TestCase):
         self.assertIsNot(b.from_json_string.__doc__, None)
         self.assertIsNot(b.create.__doc__, None)
         self.assertIsNot(b.load_from_file.__doc__, None)
-    """
 
     def test_instance(self):
         """Test Instantiation"""
