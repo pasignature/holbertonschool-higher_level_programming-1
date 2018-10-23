@@ -25,7 +25,7 @@ class TestBase(unittest.TestCase):
 
         pep8style = pep8.StyleGuide(quiet=True)
         result1 = pep8style.check_files(['models/square.py'])
-        result2 = pep8style.check_files(['tests/test_square.py'])
+        result2 = pep8style.check_files(['tests/test_models/test_square.py'])
         self.assertEqual(result1.total_errors, 0)
         self.assertEqual(result2.total_errors, 0)
 
