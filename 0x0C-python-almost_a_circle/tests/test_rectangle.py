@@ -282,6 +282,3 @@ class TestBase(unittest.TestCase):
         r6.update(**{'id': "WUT", "x": 999, "height": 888})
         d6 = {'id': 'WUT', 'width': 2, 'height': 888, 'x': 999, 'y': 2}
         self.assertDictEqual(r6.to_dictionary(), d6)
-
-if __name__ == '__main__':
-    unittest.main()

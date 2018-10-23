@@ -265,6 +265,3 @@ class TestBase(unittest.TestCase):
         s6.update(**{'id': "WUT", "x": 999, "size": 23})
         d6 = {'id': 'WUT', 'size': 23, 'x': 999, 'y': 2}
         self.assertDictEqual(s6.to_dictionary(), d6)
-
-if __name__ == '__main__':
-    unittest.main()

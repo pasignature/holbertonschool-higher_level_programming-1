@@ -216,6 +216,3 @@ class TestBase(unittest.TestCase):
 
         remove("Rectangle.json")
         remove("Square.json")
-
-if __name__ == '__main__':
-    unittest.main()
