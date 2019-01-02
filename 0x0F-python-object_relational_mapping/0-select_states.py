@@ -9,7 +9,6 @@ db = MySQLdb.connect(host="localhost",
                      user=argv[1],
                      passwd=argv[2],
                      db=argv[3])
-mysql_command = "SELECT * FROM states"
 cur = db.cursor()
 cur.execute("SELECT * FROM states")
 db.close()
