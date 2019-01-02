@@ -13,7 +13,8 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT a.id, a.name, b.name FROM cities AS a JOIN states AS b ON a.state_id = b.id")
+    cur.execute("SELECT a.id, a.name, b.name "
+                "FROM cities AS a JOIN states AS b ON a.state_id = b.id")
     db.close()
     rows = cur.fetchall()
     for row in rows:
