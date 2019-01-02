@@ -14,4 +14,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     states = Table('states', MetaData(bind=None), autoload_with=engine)
     result = engine.connect().execute(select([states])).fetchone()
-    print("{}: {}".format(result[0], result[1]))
+    if result and result[0] and result[1]:
+        print("{}: {}".format(result[0], result[1]))
+    else:
+        print("Nothing")
