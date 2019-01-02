@@ -14,7 +14,8 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s", (argv[4],))
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id",
+                (argv[4],))
     db.close()
     rows = cur.fetchall()
     for row in rows:
