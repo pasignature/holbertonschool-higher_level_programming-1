@@ -6,7 +6,6 @@ from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import json
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
@@ -16,13 +15,14 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     session = sessionmaker(bind=engine)()
     result = session.query(State, City).join(City)
-    cur_state = str(result[0][0])
-    print(cur_state)
+    cur_sid = 0
     for row in result:
-        if str(row[0]) == cur_state:
-            print("    " + str(row[1]))
-        else:
-            cur_state = str(row[0])
-            print(cur_state)
-            print("    " + str(row[1]))
+        sid = row[0].id
+        sname = row[0].name
+        cid = row[1].id
+        cname = row[1].name
+        if cur_sid != sid:
+            print(str(sid) + ": " + sname)
+            cur_sid = sid
+        print("    " + str(cid) + ": " + cname)
     session.close()
