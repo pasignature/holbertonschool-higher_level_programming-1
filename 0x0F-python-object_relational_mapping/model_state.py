@@ -22,6 +22,6 @@ class State(Base):
     name = Column(String(128),
                   nullable=False)
 
-    def __repr__(self):
-        '''REPR form of the class'''
-        return "<State(id='%s', name='%s')>" % (self.id, self.name)
+    def __str__(self):
+        '''str form of the class'''
+        return "{}: {}".format(self.id, self.name)
