@@ -13,6 +13,7 @@ if __name__ == "__main__":
                                   sys.argv[3]),
                            pool_pre_ping=True)
     session = sessionmaker(bind=engine)()
-    session.add_all([State(name='Louisiana')])
+    session.add(State(name='Louisiana'))
     session.flush()
+    session.commit()
     session.close()
