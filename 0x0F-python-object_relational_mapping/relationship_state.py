@@ -22,7 +22,8 @@ class State(Base):
                 primary_key=True)
     name = Column(String(128),
                   nullable=False)
-    cities = relationship("City", cascade="all, delete-orphan")
+    cities = relationship("City",
+                          cascade="all")
 
     def __str__(self):
         '''str form of the class'''
