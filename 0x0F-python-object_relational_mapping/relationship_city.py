@@ -24,4 +24,4 @@ class City(Base):
 
     def __str__(self):
         '''str form of the class'''
-        return "{}: ({}) {}".format(self.state_id, self.id, self.name)
+        return "{} {} {}".format(self.state_id, self.id, self.name)
