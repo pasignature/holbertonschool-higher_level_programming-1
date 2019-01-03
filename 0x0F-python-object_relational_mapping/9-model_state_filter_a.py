@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Prints the first state object from the db hbtn_0e_6_usa'''
+'''Prints the state object that contains a from the db hbtn_0e_6_usa'''
 
 import sys
 from model_state import Base, State
