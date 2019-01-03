@@ -3,7 +3,6 @@
 
 import sys
 from model_state import Base, State
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -14,6 +13,6 @@ if __name__ == "__main__":
                                   sys.argv[3]),
                            pool_pre_ping=True)
     session = sessionmaker(bind=engine)()
-    session.add(State(name='Louisiana'))
-    session.commit()
+    session.add_all([State(name='Louisiana')])
+    session.flush()
     session.close()
