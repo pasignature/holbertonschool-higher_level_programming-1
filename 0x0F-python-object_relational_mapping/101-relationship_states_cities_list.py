@@ -4,7 +4,7 @@
 import sys
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -14,15 +14,9 @@ if __name__ == "__main__":
                                   sys.argv[3]),
                            pool_pre_ping=True)
     session = sessionmaker(bind=engine)()
-    result = session.query(State, City).join(City)
-    cur_sid = 0
+    result = session.query(State).all()
     for row in result:
-        sid = row[0].id
-        sname = row[0].name
-        cid = row[1].id
-        cname = row[1].name
-        if cur_sid != sid:
-            print(str(sid) + ": " + sname)
-            cur_sid = sid
-        print("    " + str(cid) + ": " + cname)
+        print(row)
+        for city in row.cities:
+            print("    " + str(city))
     session.close()
