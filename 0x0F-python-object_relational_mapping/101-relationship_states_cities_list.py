@@ -4,7 +4,7 @@
 import sys
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import create_engine, asc
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)()
     result = session.query(State).all()
     for row in result:
-        print(row)
+        print(str(row.id) + ": " + row.name)
         for city in row.cities:
-            print("    " + str(city))
+            print("    " + str(city.id) + ": " + city.name)
     session.close()
