@@ -1,3 +1,3 @@
 #!/bin/bash
 # Script that sends header var
-curl -sH "X-HolbertonSchool-User-Id: 98" "$1"
+curl -s --header "X-HolbertonSchool-User-Id: 98" "$1"
