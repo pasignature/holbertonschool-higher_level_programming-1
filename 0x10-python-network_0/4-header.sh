@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # SCript that sends a GET request and displays response
-curl -H "X-HolbertonSchool-User-Id: 98" "$1"
+curl -s -H "X-HolbertonSchool-User-Id: 98" "$1"
