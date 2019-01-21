@@ -12,7 +12,12 @@ if __name__ == "__main__":
     except:
         print("Not a valid JSON")
     else:
-        for entry in out[:10]:
+        lst = []
+        for entry in out:
             sha = entry['sha']
-            name = entry['commit']['author']['name']
-            print("{}: {}".format(sha, name))
+            author = entry['commit']['author']['name']
+            date = entry['commit']['author']['date']
+            lst.append((sha, author, date))
+    lst.sort(key=lambda x: x[2], reverse=True)
+    for entry in lst[:10]:
+        print("{}: {}".format(entry[0], entry[1]))
