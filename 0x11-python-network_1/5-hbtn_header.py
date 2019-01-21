@@ -5,5 +5,5 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    with get(argv[1]) as r:
-        print(r.headers['X-Request-Id'])
+    r =  get(argv[1])
+    print(r.headers['X-Request-Id'])
