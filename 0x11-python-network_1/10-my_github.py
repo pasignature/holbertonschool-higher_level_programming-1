@@ -6,10 +6,10 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    auth = argv[1]
+    pw = ""
     if len(argv) > 2:
-        auth = (argv[1], argv[2])
-    r = get('https://api.github.com/user', auth=auth)
+        pw = argv[2]
+    r = get('https://api.github.com/user', auth=(argv[1], pw))
     try:
         out = r.json()
     except:
