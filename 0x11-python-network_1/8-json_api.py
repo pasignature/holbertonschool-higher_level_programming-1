@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''Takes in a letter and send a POST request'''
 from requests import get
-from requests.exceptions import HTTPError
 from sys import argv
 
 
