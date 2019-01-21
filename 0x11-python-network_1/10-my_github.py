@@ -9,10 +9,10 @@ if __name__ == "__main__":
     pw = ""
     if len(argv) > 2:
         pw = argv[2]
-    r = get('https://api.github.com/user', auth=(argv[1], pw))
+    r = get('https://api.github.com/user', auth=HTTPBasicAuth(argv[1], pw))
     try:
         out = r.json()
     except:
         print("Not a valid JSON")
     else:
-        print(out['id'])
+        print(out.get('id'))
