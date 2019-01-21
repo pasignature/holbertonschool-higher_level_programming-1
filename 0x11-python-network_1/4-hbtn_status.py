@@ -4,7 +4,7 @@ from requests import get
 
 
 if __name__ == "__main__":
-    with get("https://intranet.hbtn.io/status") as r:
-        print("Body response:")
-        print("    - type: {}".format(type(r.text)))
-        print("    - content: {}".format(r.content.decode('utf-8')))
+    r = get("https://intranet.hbtn.io/status")
+    print("Body response:")
+    print("    - type: {}".format(type(r.text)))
+    print("    - content: {}".format(r.content.decode('utf-8')))
