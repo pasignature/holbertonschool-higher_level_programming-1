@@ -5,7 +5,8 @@ from requests import Session, Request, get
 
 
 if __name__ == "__main__":
-    r = get('https://api.github.com/repos/' + argv[1] + '/' + argv[2] + '/commits')
+    u = 'https://api.github.com/repos/' + argv[1] + '/' + argv[2] + '/commits'
+    r = get(u)
     try:
         out = r.json()
     except:
