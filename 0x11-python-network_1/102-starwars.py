@@ -6,7 +6,10 @@ from sys import argv
 
 def print_entry(r):
     '''Prints character and title'''
-    for entry in r.get('results'):
+    entries = r.get('results')
+    if not entries:
+        return
+    for entry in entries:
         print(entry.get('name'))
         for film in entry.get('films'):
             print("\t{}".format(get(film).json().get('title')))
