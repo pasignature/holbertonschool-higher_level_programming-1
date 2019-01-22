@@ -13,7 +13,7 @@ def print_titles(films):
 if __name__ == "__main__":
     r = post('https://swapi.co/api/people', params={'search': argv[1]}).json()
     print("Number of results: {}".format(r['count']))
-    while (1):
+    while (r['count']):
         for entry in r['results']:
             print(entry['name'])
             print_titles(entry['films'])
