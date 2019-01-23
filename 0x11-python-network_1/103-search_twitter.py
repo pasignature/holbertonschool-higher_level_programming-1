@@ -24,7 +24,5 @@ if __name__ == "__main__":
     for entry in r.get('statuses'):
         tid = entry.get('id')
         text = entry.get('full_text')
-        if entry.get('retweeted_status'):
-            text = entry.get('retweeted_status').get('full_text')
         name = entry.get('user').get('name')
         print("[{}] {} by {}".format(tid, text, name))
