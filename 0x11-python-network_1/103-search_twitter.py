@@ -18,11 +18,10 @@ if __name__ == "__main__":
     at = post(tok, headers=hdrs, params=params).json().get('access_token')
     hdrs = {'Authorization': 'Bearer ' + at}
     params = {'q': argv[3],
-              'count': 5,
-              'tweet_mode': 'extended'}
+              'count': 5}
     r = get(ser, headers=hdrs, params=params).json()
     for entry in r.get('statuses'):
         tid = entry.get('id')
-        text = entry.get('full_text')
+        text = entry.get('text')
         name = entry.get('user').get('name')
         print("[{}] {} by {}".format(tid, text, name))
