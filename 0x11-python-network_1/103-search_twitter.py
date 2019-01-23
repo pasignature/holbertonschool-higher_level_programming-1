@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''Sends a search request to Twitter API'''
-from requests import get, post
+from requests import post, get
 from sys import argv
 from base64 import b64encode
 
@@ -24,5 +24,7 @@ if __name__ == "__main__":
     for entry in r.get('statuses'):
         tid = entry.get('id')
         text = entry.get('full_text')
+        if entry.get('retweeted_status'):
+            text = entry.get('retweeted_status').get('full_text')
         name = entry.get('user').get('name')
         print("[{}] {} by {}".format(tid, text, name))
