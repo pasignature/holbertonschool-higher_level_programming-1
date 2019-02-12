@@ -1,10 +1,8 @@
 #!/usr/bin/node
 // Searches for second biggest number
 
-if (process.argv.length < 3) {
+if (process.argv[2] === undefined || process.argv[3] === undefined) {
   console.log('0');
 } else {
-  let arr = process.argv.splice(2).sort();
-  arr.pop();
-  console.log(arr.pop());
+  console.log(process.argv.sort().reverse()[1]);
 }
