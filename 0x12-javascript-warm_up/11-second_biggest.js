@@ -10,10 +10,11 @@ if (process.argv.length < 4) {
       arr.push(parseInt(process.argv[i]));
     }
   }
-  arr = [...new Set(arr)].sort().reverse();
+  arr = [...new Set(arr)].sort((a, b) => a - b);
   if (arr.length === 1) {
     console.log(arr[0]);
   } else {
-    console.log(arr[1]);
+    arr.pop();
+    console.log(arr.pop());
   }
 }
