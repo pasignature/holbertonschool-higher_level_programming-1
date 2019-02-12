@@ -1,13 +1,16 @@
 #!/usr/bin/node
 // Searches for second biggest number
 
-if (process.argv.length <= 3) {
+let arr = [];
+if (process.argv.length < 4) {
   console.log(0);
 } else {
-  let tmp =process.argv.slice(2).map(function(v) {
-    return parseInt(v);
-  });
-  let arr = [...new Set(tmp)].sort().reverse();
+  for (let i = 0; i < process.argv.length; i++) {
+    if (parseInt(process.argv[i])) {
+      arr.push(parseInt(process.argv[i]));
+    }
+  }
+  arr = [...new Set(arr)].sort().reverse();
   if (arr.length === 1) {
     console.log(arr[0]);
   } else {
