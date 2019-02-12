@@ -4,5 +4,7 @@
 if (process.argv.length <= 3) {
   console.log('0');
 } else {
-  console.log([...new Set(process.argv.slice(2))].sort().reverse()[1]);
+  let arr = process.argv.splice(2).sort();
+  arr.pop();
+  console.log(arr.pop());
 }
