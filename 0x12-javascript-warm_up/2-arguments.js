@@ -1,4 +1,11 @@
 #!/usr/bin/node
 // Prints 3 lines to the screen
 
-console.log('C is fun\nPython is cool\nJavascript is amazing');
+let size = parseInt(process.argv.length);
+if (size === 2) {
+  console.log('No argument');
+} else if (size === 3) {
+  console.log('Argument found');
+} else {
+  console.log('Arguments found');
+}
