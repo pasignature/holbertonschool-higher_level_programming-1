@@ -1,9 +1,10 @@
 #!/usr/bin/node
 // Searches for second biggest number
 
-let args = process.argv.slice(2);
-if (args.length <= 1) {
+let size = process.argv.length;
+if (size <= 1) {
   console.log('0');
 } else {
-  console.log(args.sort()[args.length - 2]);
+  args = process.argv.slice(2);
+  console.log(args.sort()[size - 4]);
 }
