@@ -2,7 +2,7 @@
 // Searches for second biggest number
 
 let size = process.argv.length;
-if (size <= 1) {
+if (size <= 3) {
   console.log('0');
 } else {
   let args = process.argv.slice(2);
