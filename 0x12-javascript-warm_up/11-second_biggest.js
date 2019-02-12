@@ -5,6 +5,6 @@ let size = process.argv.length;
 if (size <= 1) {
   console.log('0');
 } else {
-  args = process.argv.slice(2);
+  let args = process.argv.slice(2);
   console.log(args.sort()[size - 4]);
 }
