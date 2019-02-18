@@ -3,5 +3,5 @@
 exports.converter = function (base) {
   return function changeBase (val) {
     return val.toString(base);
-  }
+  };
 };
