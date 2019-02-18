@@ -1,11 +1,11 @@
 #!/usr/bin/node
 // imports a dict of occ by user id and computes dict of user id by occ
 let dict = require('./101-data').dict;
+let tmp = {};
 for (let k in dict) {
-  if (dict[dict[k]] === undefined) {
-    dict[dict[k]] = [];
+  if (tmp[dict[k]] === undefined) {
+    tmp[dict[k]] = [];
   }
-  dict[dict[k]].push(k);
-  delete dict[k];
+  tmp[dict[k]].push(k);
 }
-console.log(dict);
+console.log(tmp);
