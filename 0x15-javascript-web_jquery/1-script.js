@@ -1,2 +1,2 @@
 // Change header text to red
-document.querySelector('header').style.color = '#FF0000';
+let t = document.getElementsByTagName('header')[0].style.color = '#FF0000';
