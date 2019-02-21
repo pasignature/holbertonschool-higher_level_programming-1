@@ -8,12 +8,11 @@ require('request').get(process.argv[2], function (err, res, body) {
     let count = 0;
     for (let i = 0; i < films.length; i++) {
       let chars = films[i].characters;
-      for (let j = 0; j < chars.length ; j++ )
-      {
-	if (chars[j].includes('/18/')) {
-	  count++;
-	  break;
-	}
+      for (let j = 0; j < chars.length; j++) {
+        if (chars[j].includes('/18/')) {
+          count++;
+          break;
+        }
       }
     }
     console.log(count);
